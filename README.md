@@ -10,8 +10,8 @@ BASIC EC2 CREATION USING-TERRAFORM SCRIPT
 
 CONNECTION TO EC2:-
 
-	1)	chmod 400 swimlane.pem
-	2)	ssh -i "swimlane.pem" ubuntu@ec2-18-218-41-106.us-east-2.compute.amazonaws.com
+	1) chmod 400 swimlane.pem
+	2) ssh -i "swimlane.pem" ubuntu@ec2-18-218-41-106.us-east-2.compute.amazonaws.com
 
 
 SETUP-GIT
@@ -52,12 +52,12 @@ DOCKER commands:-
 	11)	sudo docker-compose build
 	12)	sudo docker-compose up
 	13)	sudo docker images
-  14) sudo docker ps 
-  15) sudo docker ps -a
+  	14) 	sudo docker ps 
+  	15) 	sudo docker ps -a
 	16)	sudo docker tag docker-node-mongo:latest sun113/swimlane
-  17) sudo docker login
+ 	 17) 	sudo docker login
 	18)	sudo docker push sun113/swimlane:latest
-  19) sudo docker logout
+  	19) 	sudo docker logout
 
 
 Minikube-INSTALL ON EC2
@@ -91,16 +91,16 @@ Kubectl installation on EC2
 	6)	  kubectl apply -f deployment.yaml
 	7)	  vim service.yaml  
 	8)	  kubectl apply -f service.yaml
-	9)    kubectl apply -f nginx/deployment.yaml
-	10)   kubectl apply -f nginx/service.yaml
+	9)    	  kubectl apply -f nginx/deployment.yaml
+	10)  	  kubectl apply -f nginx/service.yaml
 	11)	  kubectl get pods
-	12)   kubectl describe pods
-	13)   kubectl get services
-	14)   minikube service nginx-loadbalancer-service
-	15)  kubctl delete deployments --all
-	16)  kubctl get pods
-	17)  kubctl delete services --all
-	18)  kubctl get pods
+	12)       kubectl describe pods
+	13)       kubectl get services
+	14)       minikube service nginx-loadbalancer-service
+	15)       kubctl delete deployments --all
+	16)       kubctl get pods
+	17)       kubctl delete services --all
+	18)       kubctl get pods
 
 HELM
 
