@@ -1,0 +1,25 @@
+appserver:
+  name: appserver
+
+  image:
+    name: swimlane:latest
+    tag: v2
+    exposedPort: 3000
+
+  repilcas: 4
+
+  service:
+    type: ClusterIP
+
+nginx:
+  name: nginx
+
+  image:
+    name: nginx
+    tag: v2
+    exposedPort: 80
+
+  repilcas: 1
+
+  service:
+    type: LoadBalancer

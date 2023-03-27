@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: appserver-deployment
+
+spec:
+  replicas: 3
+
+  selector:
+    matchlabels:
+      server: appserver
+
+  template:
+    metadata:
+      labels:
+        server: appserver
+    spec:
+      container:
+       - name: appserver
+          image: swimlane:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 3000

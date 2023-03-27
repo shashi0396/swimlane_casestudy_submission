@@ -1,0 +1,40 @@
+---
+ - name: Provisioning NTP server
+   hosts: all
+   become: yes
+   tasks: yes
+     - name: Install NTP in Ubuntu
+       apt:
+         name: "{{item}}"
+         state: present
+         update_cache: yes
+       when: ansible_distribution == "Ubuntu"
+       loop:
+         - ntp
+         - wget
+         - git
+         - zip
+         - unzip     
+
+     - name: Start and Enable NTP Debian
+       apt:
+         name: ntp
+         state: started
+         enabled: yes 
+       when: ansible_os_family == "Ubuntu"     
+      
+     - name: Deploy NTP conf file for Debian
+       template:
+         src: templates/ntp_debian.conf.j2
+         dest: /etc/ntp.conf
+       when: ansible_os_family == "Ubuntu" 
+
+     - name: Restart NTP Debian
+       service:
+         name: ntp
+         state: restarted
+         enabled: yes 
+       when: ansible_os_family == "Ubuntu" 
+
+
+

@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Service
+
+metadata:
+  name: app-server-clusterip-service
+
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 3000
+
+  selector:
+    server: appserver
