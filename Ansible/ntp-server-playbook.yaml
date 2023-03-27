@@ -11,8 +11,6 @@
        when: ansible_distribution == "Ubuntu"
        loop:
          - ntp
-         - wget
-         - git
          - zip
          - unzip     
 
